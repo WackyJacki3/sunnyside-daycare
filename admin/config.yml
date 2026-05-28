@@ -9,11 +9,13 @@ collections:
   - name: "siteContent"
     label: "Site Content"
     files:
-      - label: "Contact & Business Info"
+      - label: "Site Content"
         name: "siteInfo"
         file: "content.json"
         format: json
         fields:
+
+          # ── Contact & Business Info ──────────────────────────────────────
           - label: "Phone Number"
             name: "phone"
             widget: "string"
@@ -22,26 +24,165 @@ collections:
           - label: "Email Address"
             name: "email"
             widget: "string"
-            hint: "Appears in footer and contact page"
 
           - label: "Address"
             name: "address"
             widget: "text"
             hint: "Two lines — street on line 1, city/province/postal on line 2"
 
-          - label: "Homepage Hero Description"
+          # ── Homepage ────────────────────────────────────────────────────
+          - label: "Homepage — Hero Description"
             name: "hero-subtext"
             widget: "text"
-            hint: "The paragraph below the main headline on the homepage"
+            hint: "The paragraph below the main headline"
 
-          - label: "Homepage Hero Photo"
+          - label: "Homepage — Hero Photo"
             name: "img-hero"
             widget: "image"
             required: false
-            hint: "The large photo in the homepage hero section. Upload a photo or leave unchanged."
 
-          - label: "Day-in-Life Photo"
+          - label: "Homepage — Day-in-Life Photo"
             name: "img-day"
             widget: "image"
             required: false
-            hint: "Photo in the 'A day at Sunnyside' section on the homepage"
+
+          # ── About Page ──────────────────────────────────────────────────
+          - label: "About — Story Paragraph"
+            name: "about-story"
+            widget: "text"
+
+          - label: "About — Story Photo"
+            name: "img-story"
+            widget: "image"
+            required: false
+
+          - label: "Team — Member 1 Name"
+            name: "team-1-name"
+            widget: "string"
+
+          - label: "Team — Member 1 Role"
+            name: "team-1-role"
+            widget: "string"
+
+          - label: "Team — Member 1 Bio"
+            name: "team-1-bio"
+            widget: "text"
+
+          - label: "Team — Member 1 Photo"
+            name: "img-team-1"
+            widget: "image"
+            required: false
+
+          - label: "Team — Member 2 Name"
+            name: "team-2-name"
+            widget: "string"
+
+          - label: "Team — Member 2 Role"
+            name: "team-2-role"
+            widget: "string"
+
+          - label: "Team — Member 2 Bio"
+            name: "team-2-bio"
+            widget: "text"
+
+          - label: "Team — Member 2 Photo"
+            name: "img-team-2"
+            widget: "image"
+            required: false
+
+          - label: "Team — Member 3 Name"
+            name: "team-3-name"
+            widget: "string"
+
+          - label: "Team — Member 3 Role"
+            name: "team-3-role"
+            widget: "string"
+
+          - label: "Team — Member 3 Bio"
+            name: "team-3-bio"
+            widget: "text"
+
+          - label: "Team — Member 3 Photo"
+            name: "img-team-3"
+            widget: "image"
+            required: false
+
+          # ── Programs Page ───────────────────────────────────────────────
+          - label: "The Cubby — Description"
+            name: "cubby-lede"
+            widget: "text"
+
+          - label: "The Cubby — Photo"
+            name: "img-cubby"
+            widget: "image"
+            required: false
+
+          - label: "The Sunbeam Room — Description"
+            name: "sunbeam-lede"
+            widget: "text"
+
+          - label: "The Sunbeam Room — Photo"
+            name: "img-sunbeam"
+            widget: "image"
+            required: false
+
+          - label: "The Treehouse — Description"
+            name: "treehouse-lede"
+            widget: "text"
+
+          - label: "The Treehouse — Photo"
+            name: "img-treehouse"
+            widget: "image"
+            required: false
+
+          # ── Our Space Page ──────────────────────────────────────────────
+          - label: "Space Gallery Photo 1 — Sunbeam Room"
+            name: "img-gallery-1"
+            widget: "image"
+            required: false
+
+          - label: "Space Gallery Photo 2 — The Cubby"
+            name: "img-gallery-2"
+            widget: "image"
+            required: false
+
+          - label: "Space Gallery Photo 3 — The Treehouse"
+            name: "img-gallery-3"
+            widget: "image"
+            required: false
+
+          - label: "Space Gallery Photo 4 — Garden"
+            name: "img-gallery-4"
+            widget: "image"
+            required: false
+
+          - label: "Space Gallery Photo 5 — Lunch Room"
+            name: "img-gallery-5"
+            widget: "image"
+            required: false
+
+          - label: "Outdoor Space Photo"
+            name: "img-outdoor"
+            widget: "image"
+            required: false
+
+          # ── Enrollment Page ─────────────────────────────────────────────
+          - label: "Enrollment Status"
+            name: "enrollment-status"
+            widget: "string"
+            hint: "e.g. 'Currently accepting Fall 2026'"
+
+          - label: "The Cubby — Monthly Tuition"
+            name: "tuition-cubby"
+            widget: "string"
+            hint: "Include the $ sign, e.g. '$1,200'"
+
+          - label: "The Sunbeam Room — Monthly Tuition"
+            name: "tuition-sunbeam"
+            widget: "string"
+            hint: "Include the $ sign, e.g. '$1,100'"
+
+          - label: "The Treehouse — Monthly Tuition"
+            name: "tuition-treehouse"
+            widget: "string"
+            hint: "Include the $ sign, e.g. '$1,050'"
