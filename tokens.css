@@ -1,0 +1,247 @@
+/* ─────────────────────────────────────────────────────────────────
+   Sunnyside Daycare — Design Tokens
+   ─────────────────────────────────────────────────────────────────
+   Drop this into your root stylesheet (or @import it). All design
+   decisions in the system flow from these custom properties.
+
+   Stack assumed:  Astro + Tailwind CSS.
+   Tailwind v4:    pair this with `@theme inline { … }` referencing
+                   these variables, so utilities like `bg-bg-warm`,
+                   `text-ink-2`, and `rounded-xl-2` work natively.
+   Tailwind v3:    map each token in `tailwind.config.js` under
+                   `theme.extend.colors`, `theme.extend.fontFamily`,
+                   `theme.extend.spacing`, etc.
+
+   Tailwind comments show the *closest* default-scale equivalent,
+   with arbitrary-value syntax noted where no preset matches.
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─────────────────────────────────────────────
+     COLORS
+     ───────────────────────────────────────────── */
+
+  /* Surfaces */
+  --color-background:       #FFFBF2;  /* Tailwind: bg-[#FFFBF2]      (closest: amber-50)  */
+  --color-surface:          #FBEDD4;  /* Tailwind: bg-[#FBEDD4]      (closest: amber-100) */
+  --color-surface-deep:     #F5DDB5;  /* Tailwind: bg-[#F5DDB5]      (closest: amber-200) */
+
+  /* Text */
+  --color-text-primary:     #1F2C32;  /* Tailwind: text-[#1F2C32]    (closest: slate-900) */
+  --color-text-secondary:   #2A4A55;  /* Tailwind: text-[#2A4A55]    (closest: slate-800) */
+  --color-text-muted:       #5E6A6F;  /* Tailwind: text-[#5E6A6F]    (closest: slate-500) */
+
+  /* Lines / borders */
+  --color-border:           #EADFC8;  /* Tailwind: border-[#EADFC8]  (closest: stone-200) */
+  --color-border-soft:      #F1E8D4;  /* Tailwind: border-[#F1E8D4]  (closest: stone-100) */
+
+  /* Brand accents */
+  --color-primary:          #F4A261;  /* Sunny orange  — Tailwind: bg-[#F4A261] (closest: orange-300) */
+  --color-secondary:        #E76F51;  /* Terracotta    — Tailwind: bg-[#E76F51] (closest: orange-500) */
+  --color-accent:           #2A9D8F;  /* Teal          — Tailwind: bg-[#2A9D8F] (closest: teal-600) */
+  --color-leaf:             #6B9B7A;  /* Sage green    — Tailwind: bg-[#6B9B7A] (closest: emerald-500) */
+  --color-sun:              #F4A261;  /* Alias of primary */
+  --color-plum:             #6B4F66;  /* Reserved      — Tailwind: bg-[#6B4F66] */
+
+  /* Semantic role colors (build out for forms etc.) */
+  --color-error:            #C25E72;  /* Tailwind: text-[#C25E72]    (closest: rose-500) */
+  --color-success:          #6B9B5C;  /* Tailwind: text-[#6B9B5C]    (closest: green-500) */
+
+  /* Convenient inverses (for dark band) */
+  --color-dark-surface:     #2A4A55;  /* Enrollment band background  */
+  --color-dark-text:        #FFFBF2;  /* Text on dark background     */
+
+  /* ─────────────────────────────────────────────
+     TYPOGRAPHY — FAMILIES
+     ───────────────────────────────────────────── */
+  --font-family-primary:    "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-family-secondary:  "Newsreader", ui-serif, Georgia, serif;
+  --font-family-mono:       ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Google Fonts URL (single import):
+     https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap
+  */
+
+  /* ─────────────────────────────────────────────
+     TYPOGRAPHY — TYPE SCALE (fluid)
+
+     Each size is a clamp() function whose endpoints are the
+     mobile (~375px) and desktop (~1440px) sizes from the
+     design-system.md spec. Tailwind v4 supports custom font-size
+     utilities via @theme; v3 requires `theme.extend.fontSize`.
+     ───────────────────────────────────────────── */
+
+  --font-size-display:      clamp(3.125rem, 1.9rem + 5.2vw, 5rem);     /*  50 → 80 px  | Tailwind: text-[clamp(3.125rem,1.9rem+5.2vw,5rem)] */
+  --font-size-h1:           clamp(2.625rem, 1.7rem + 3.8vw, 4rem);      /*  42 → 64 px  | Tailwind: text-[clamp(2.625rem,1.7rem+3.8vw,4rem)]    */
+  --font-size-h2:           clamp(2rem,     1.4rem + 2.4vw, 3rem);      /*  32 → 48 px  | Tailwind: text-[clamp(2rem,1.4rem+2.4vw,3rem)]        */
+  --font-size-h3:           clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem);   /*  26 → 36 px  | Tailwind: text-[clamp(1.625rem,1.3rem+1.4vw,2.25rem)] */
+  --font-size-h4:           clamp(1.3125rem,1.1rem + 0.8vw, 1.5rem);    /*  21 → 24 px  | Tailwind: text-2xl  / text-[1.5rem] */
+  --font-size-body-large:   clamp(1.125rem, 1rem   + 0.4vw, 1.25rem);   /*  18 → 20 px  | Tailwind: text-xl   / text-[1.25rem] */
+  --font-size-body:         clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem); /* 15 → 17 px | Tailwind: text-base / text-[1.0625rem] */
+  --font-size-body-small:   clamp(0.875rem, 0.78rem + 0.2vw, 0.9375rem);/*  14 → 15 px  | Tailwind: text-sm   */
+  --font-size-caption:      clamp(0.75rem,  0.7rem  + 0.15vw, 0.8125rem); /* 12 → 13 px | Tailwind: text-xs   */
+
+  /* Font weights */
+  --font-weight-regular:    400;       /* Tailwind: font-normal   */
+  --font-weight-medium:     500;       /* Tailwind: font-medium   */
+  --font-weight-semibold:   600;       /* Tailwind: font-semibold */
+  --font-weight-bold:       700;       /* Tailwind: font-bold     */
+
+  /* Line heights */
+  --line-height-display:    1.05;      /* Tailwind: leading-[1.05] */
+  --line-height-tight:      1.1;       /* Tailwind: leading-tight  */
+  --line-height-snug:       1.2;       /* Tailwind: leading-snug   */
+  --line-height-base:       1.5;       /* Tailwind: leading-normal */
+  --line-height-relaxed:    1.6;       /* Tailwind: leading-relaxed*/
+
+  /* Letter spacing */
+  --letter-spacing-display: -0.015em;  /* Tailwind: tracking-tight */
+  --letter-spacing-tight:   -0.01em;   /* Tailwind: tracking-tight */
+  --letter-spacing-eyebrow: 0.16em;    /* Tailwind: tracking-[0.16em] (eyebrows) */
+  --letter-spacing-tag:     0.1em;     /* Tailwind: tracking-widest   (age tags) */
+
+  /* ─────────────────────────────────────────────
+     SPACING — 4px base unit
+     ───────────────────────────────────────────── */
+  --spacing-xxs:            0.25rem;   /*  4 px | Tailwind: p-1  / m-1  / gap-1  */
+  --spacing-xs:             0.5rem;    /*  8 px | Tailwind: p-2  / m-2  / gap-2  */
+  --spacing-sm:             0.75rem;   /* 12 px | Tailwind: p-3  / m-3  / gap-3  */
+  --spacing-md:             1rem;      /* 16 px | Tailwind: p-4  / m-4  / gap-4  */
+  --spacing-lg:             1.5rem;    /* 24 px | Tailwind: p-6  / m-6  / gap-6  */
+  --spacing-xl:             2rem;      /* 32 px | Tailwind: p-8  / m-8  / gap-8  */
+  --spacing-2xl:            3rem;      /* 48 px | Tailwind: p-12 / m-12 / gap-12 */
+  --spacing-3xl:            5rem;      /* 80 px | Tailwind: p-20 / m-20 / gap-20 */
+
+  /* Section padding — vertical rhythm (top + bottom) */
+  --spacing-section-desktop:   6.875rem;  /* 110 px | Tailwind: py-[6.875rem]   */
+  --spacing-section-tablet:    5rem;      /*  80 px | Tailwind: py-20           */
+  --spacing-section-mobile:    3.5rem;    /*  56 px | Tailwind: py-14           */
+
+  /* Container */
+  --container-max-width:    75rem;        /* 1200 px | Tailwind: max-w-[1200px]  */
+  --container-gutter:       4vw;          /* Outer breathing room                */
+  --container-width:        min(75rem, 92vw); /* Use as `w-[min(1200px,92vw)]`   */
+
+  /* ─────────────────────────────────────────────
+     BORDER RADIUS
+     ───────────────────────────────────────────── */
+  --radius-sm:              0.75rem;   /*  12 px | Tailwind: rounded-xl    */
+  --radius-md:              1.125rem;  /*  18 px | Tailwind: rounded-[18px] */
+  --radius-lg:              1.25rem;   /*  20 px | Tailwind: rounded-3xl (~24)  / rounded-[20px] */
+  --radius-xl:              1.5rem;    /*  24 px | Tailwind: rounded-3xl   */
+  --radius-2xl:             1.75rem;   /*  28 px | Tailwind: rounded-[28px] */
+  --radius-3xl:             2.25rem;   /*  36 px | Tailwind: rounded-[36px] */
+  --radius-pill:            999px;     /*         | Tailwind: rounded-full */
+
+  /* ─────────────────────────────────────────────
+     SHADOWS
+
+     Sunnyside is mostly flat. Shadows are reserved for
+     floating stickers, card hover lift, and a single
+     ambient glow on the enrollment band.
+     ───────────────────────────────────────────── */
+  --shadow-sm:              0 1px 2px rgba(31, 44, 50, 0.06);
+                            /* Tailwind: shadow-sm                                    */
+  --shadow-md:              0 12px 28px -16px rgba(31, 44, 50, 0.25);
+                            /* Sticker chips on photos.    Tailwind: shadow-[…]       */
+  --shadow-lg:              0 18px 40px -22px rgba(31, 44, 50, 0.25);
+                            /* Card hover lift.            Tailwind: shadow-[…]       */
+  --shadow-glow:            0 0 80px 0 rgba(244, 162, 97, 0.4);
+                            /* Enrollment band ambient warmth. Use on a 320px         */
+                            /* circle pseudo-element with filter: blur(80px).         */
+
+  /* ─────────────────────────────────────────────
+     MOTION
+     ───────────────────────────────────────────── */
+  --duration-fast:          150ms;     /* Tailwind: duration-150 */
+  --duration-base:          200ms;     /* Tailwind: duration-200 */
+  --duration-slow:          350ms;     /* Tailwind: duration-300 / 500 */
+  --easing-out:             cubic-bezier(0.4, 0, 0.2, 1);  /* Tailwind: ease-out */
+
+  /* ─────────────────────────────────────────────
+     BREAKPOINTS (reference; use Tailwind utilities)
+     ───────────────────────────────────────────── */
+  --bp-mobile-max:          559px;     /* Tailwind screens: xs : '560px'  */
+  --bp-tablet-max:          959px;     /* Tailwind screens: md : '960px'  */
+  --bp-desktop-min:         960px;
+  --bp-desktop-lg:          1200px;    /* Tailwind screens: lg : '1200px' */
+
+  /* ─────────────────────────────────────────────
+     Z-INDEX SCALE
+     ───────────────────────────────────────────── */
+  --z-base:                 1;
+  --z-sticky-nav:           50;
+  --z-mobile-menu:          100;
+  --z-tweaks:               2147483646;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BASE TYPOGRAPHY — apply the tokens. Drop these or override.
+   ───────────────────────────────────────────────────────────────── */
+
+html {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.display      { font-size: var(--font-size-display); }
+h1, .h1       { font-size: var(--font-size-h1); }
+h2, .h2       { font-size: var(--font-size-h2); line-height: var(--line-height-display); }
+h3, .h3       { font-size: var(--font-size-h3); line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight); }
+h4, .h4       { font-size: var(--font-size-h4); line-height: var(--line-height-snug); letter-spacing: var(--letter-spacing-tight); }
+
+.body-lg      { font-size: var(--font-size-body-large); line-height: var(--line-height-base); }
+.body-sm      { font-size: var(--font-size-body-small); line-height: 1.55; }
+.caption      { font-size: var(--font-size-caption); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: var(--letter-spacing-eyebrow); }
+
+em            { font-style: italic; color: var(--color-secondary); font-weight: var(--font-weight-regular); }
+
+/* ─────────────────────────────────────────────────────────────────
+   TAILWIND v4 — @theme directive (uncomment and place in app.css)
+   ─────────────────────────────────────────────────────────────────
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg:           var(--color-background);
+  --color-bg-warm:      var(--color-surface);
+  --color-bg-deep:      var(--color-surface-deep);
+  --color-ink:          var(--color-text-primary);
+  --color-ink-2:        var(--color-text-secondary);
+  --color-muted:        var(--color-text-muted);
+  --color-line:         var(--color-border);
+  --color-line-soft:    var(--color-border-soft);
+  --color-sun:          var(--color-primary);
+  --color-terracotta:   var(--color-secondary);
+  --color-leaf:         var(--color-leaf);
+
+  --font-display:       "Newsreader", ui-serif, Georgia, serif;
+  --font-sans:          "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-pill:        999px;
+  --radius-2xl-card:    1.75rem;
+  --radius-3xl-card:    2.25rem;
+
+  --shadow-sticker:     var(--shadow-md);
+  --shadow-card-hover:  var(--shadow-lg);
+
+  --breakpoint-xs:      560px;
+  --breakpoint-md:      960px;
+  --breakpoint-lg:      1200px;
+}
+
+   ───────────────────────────────────────────────────────────────── */

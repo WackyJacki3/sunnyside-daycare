@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programs — Sunnyside Daycare</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="src/styles.css" />
+<link rel="stylesheet" href="src/programs.css" />
+</head>
+<body>
+
+<!-- ─── Top Navigation ─── -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Sunnyside Daycare — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36">
+          <g stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round" fill="none">
+            <line x1="18" y1="2.5" x2="18" y2="6.5" />
+            <line x1="18" y1="29.5" x2="18" y2="33.5" />
+            <line x1="2.5" y1="18" x2="6.5" y2="18" />
+            <line x1="29.5" y1="18" x2="33.5" y2="18" />
+            <line x1="7" y1="7" x2="9.8" y2="9.8" />
+            <line x1="26.2" y1="26.2" x2="29" y2="29" />
+            <line x1="29" y1="7" x2="26.2" y2="9.8" />
+            <line x1="9.8" y1="26.2" x2="7" y2="29" />
+          </g>
+          <circle cx="18" cy="18" r="8.5" fill="var(--accent)" />
+        </svg>
+      </span>
+      <span class="brand-name">Sunnyside</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html" aria-current="page" style="color: var(--accent-2);">Programs</a></li>
+        <li><a href="space.html">Our Space</a></li>
+        <li><a href="enrollment.html">Enrollment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="enrollment.html" class="btn btn-secondary" style="padding: 10px 18px; min-height: 40px;">Book a tour</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36">
+          <g stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round" fill="none">
+            <line x1="18" y1="2.5" x2="18" y2="6.5" />
+            <line x1="18" y1="29.5" x2="18" y2="33.5" />
+            <line x1="2.5" y1="18" x2="6.5" y2="18" />
+            <line x1="29.5" y1="18" x2="33.5" y2="18" />
+            <line x1="7" y1="7" x2="9.8" y2="9.8" />
+            <line x1="26.2" y1="26.2" x2="29" y2="29" />
+            <line x1="29" y1="7" x2="26.2" y2="9.8" />
+            <line x1="9.8" y1="26.2" x2="7" y2="29" />
+          </g>
+          <circle cx="18" cy="18" r="8.5" fill="var(--accent)" />
+        </svg>
+      </span>
+      <span class="brand-name">Sunnyside</span>
+    </a>
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">✕</button>
+  </div>
+  <div class="mobile-menu-body">
+    <a href="about.html" data-mclose>About</a>
+    <a href="programs.html" data-mclose>Programs</a>
+    <a href="space.html" data-mclose>Our Space</a>
+    <a href="enrollment.html" data-mclose>Enrollment</a>
+    <a href="contact.html" data-mclose>Contact</a>
+  </div>
+  <div class="mobile-menu-foot">
+    <a href="enrollment.html" class="btn btn-primary" data-mclose>Book a tour</a>
+    <a href="tel:" class="btn btn-ghost" data-mclose>Call us — <span data-cms="phone">(604) 000-0000</span></a>
+  </div>
+</div>
+
+<!-- ─── Page Hero ─── -->
+<section class="page-hero">
+  <div class="col">
+    <span class="eyebrow">Programs</span>
+    <h1>Three rooms. One <em>sunny</em> rhythm.</h1>
+    <p>From snuggly first steps to soon-to-be kindergartners, every age has a room shaped around what they need most — the routines, the play, the pace.</p>
+    <div class="page-hero-meta">
+      <span>Ages 0–5</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Mon–Fri · 7:00am–6:00pm</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Year-round care</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Comparison Strip ─── -->
+<section class="compare" aria-label="At a glance">
+  <div class="col">
+    <div class="compare-row">
+      <div class="compare-card">
+        <div class="age">Infants · 0–18 months</div>
+        <h3>The Cubby</h3>
+        <div class="compare-stats">
+          <div class="compare-stat"><span class="l">Ratio</span><span class="v">1 : 3</span></div>
+          <div class="compare-stat"><span class="l">Room size</span><span class="v">Up to 6</span></div>
+          <div class="compare-stat"><span class="l">Hours</span><span class="v">7am – 6pm</span></div>
+          <div class="compare-stat"><span class="l">Sleep</span><span class="v">On demand</span></div>
+        </div>
+      </div>
+
+      <div class="compare-card">
+        <div class="age">Toddlers · 18 mo – 3 yrs</div>
+        <h3>The Sunbeam Room</h3>
+        <div class="compare-stats">
+          <div class="compare-stat"><span class="l">Ratio</span><span class="v">1 : 4</span></div>
+          <div class="compare-stat"><span class="l">Room size</span><span class="v">Up to 12</span></div>
+          <div class="compare-stat"><span class="l">Hours</span><span class="v">7am – 6pm</span></div>
+          <div class="compare-stat"><span class="l">Nap time</span><span class="v">After lunch</span></div>
+        </div>
+      </div>
+
+      <div class="compare-card">
+        <div class="age">Preschool · 3 – 5 yrs</div>
+        <h3>The Treehouse</h3>
+        <div class="compare-stats">
+          <div class="compare-stat"><span class="l">Ratio</span><span class="v">1 : 8</span></div>
+          <div class="compare-stat"><span class="l">Room size</span><span class="v">Up to 16</span></div>
+          <div class="compare-stat"><span class="l">Hours</span><span class="v">7am – 6pm</span></div>
+          <div class="compare-stat"><span class="l">Forest school</span><span class="v">Weekly</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── The Cubby ─── -->
+<section class="section col" id="cubby">
+  <div class="prog-split">
+    <div class="prog-split-img">
+      <image-slot id="cubby-photo" shape="rounded" radius="32"
+        src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=900&q=80&auto=format&fit=crop"
+        placeholder="A soft, warm photo of an infant or quiet nap moment"></image-slot>
+    </div>
+    <div class="prog-split-body">
+      <span class="age-tag"><span class="pip" aria-hidden="true"></span>Infants · 0–18 months</span>
+      <h2>The <em>Cubby</em></h2>
+      <p class="lede">Slow days, lots of cuddles, sleep when you sleep. The Cubby moves at your baby's pace — we follow your routine, your bottles, your naps.</p>
+
+      <div class="prog-detail-grid">
+        <div class="prog-detail">
+          <h4>A typical day</h4>
+          <p>Mostly snuggles, songs, and sensory time. Tummy time on the mat, two stroller walks, and naps on demand. Daily photo updates so you know how it's going.</p>
+        </div>
+        <div class="prog-detail">
+          <h4>What's included</h4>
+          <ul>
+            <li>1 : 3 educator ratio</li>
+            <li>Bottle feeding &amp; solids</li>
+            <li>Diapers + wipes provided</li>
+            <li>Daily updates with photos</li>
+            <li>Quiet nap room</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── The Sunbeam Room ─── -->
+<section class="section col" id="sunbeam" style="background: var(--bg-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="prog-split reverse">
+    <div class="prog-split-img">
+      <image-slot id="sunbeam-photo" shape="rounded" radius="32"
+        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=80&auto=format&fit=crop"
+        placeholder="A toddler exploring, pretend play, or messy art"></image-slot>
+    </div>
+    <div class="prog-split-body">
+      <span class="age-tag" style="background: var(--bg); border-color: var(--line);"><span class="pip" style="background: var(--accent);" aria-hidden="true"></span>Toddlers · 18 mo – 3 years</span>
+      <h2>The <em>Sunbeam</em> Room</h2>
+      <p class="lede">Little explorers learning big feelings. Pretend play, messy hands, and a thousand discoveries before lunch — with the patience and rhythm toddlers need.</p>
+
+      <div class="prog-detail-grid">
+        <div class="prog-detail">
+          <h4>A typical day</h4>
+          <p>Circle time with songs. Free play in stations — kitchen, blocks, art. Two outdoor times. Family-style lunch. Naps. Afternoon adventure outside or in.</p>
+        </div>
+        <div class="prog-detail">
+          <h4>What's included</h4>
+          <ul>
+            <li>1 : 4 educator ratio</li>
+            <li>Hot lunch + two snacks daily</li>
+            <li>Gentle potty learning support</li>
+            <li>Music, books &amp; art every day</li>
+            <li>Weekly menu shared with parents</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── The Treehouse ─── -->
+<section class="section col" id="treehouse">
+  <div class="prog-split">
+    <div class="prog-split-img">
+      <image-slot id="treehouse-photo" shape="rounded" radius="32"
+        src="https://images.unsplash.com/photo-1597392582469-a697322d5c16?w=900&q=80&auto=format&fit=crop"
+        placeholder="A preschooler engaged in a project, building, or outside exploring"></image-slot>
+    </div>
+    <div class="prog-split-body">
+      <span class="age-tag"><span class="pip" style="background: var(--leaf);" aria-hidden="true"></span>Preschool · 3 – 5 years</span>
+      <h2>The <em>Treehouse</em></h2>
+      <p class="lede">Curious minds, ready for kindergarten. Project days, big questions, and a lot of new friends — we focus on confidence, kindness, and curiosity before flashcards.</p>
+
+      <div class="prog-detail-grid">
+        <div class="prog-detail">
+          <h4>A typical day</h4>
+          <p>Morning meeting and project intros. Hands-on activities — building, science, art. Outside time or forest school. Family-style lunch, quiet time, and afternoon free play.</p>
+        </div>
+        <div class="prog-detail">
+          <h4>What's included</h4>
+          <ul>
+            <li>1 : 8 educator ratio</li>
+            <li>Weekly forest school day</li>
+            <li>Early literacy &amp; numeracy</li>
+            <li>Kindergarten-readiness program</li>
+            <li>Field trips &amp; seasonal celebrations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Included with every program ─── -->
+<section class="section included">
+  <div class="col">
+    <div class="s-head">
+      <div>
+        <span class="eyebrow">Included with every program</span>
+        <h2>What every <em>kiddo</em> gets.</h2>
+      </div>
+      <p class="s-aside">No add-ons, no surprises. The basics are just part of being here.</p>
+    </div>
+
+    <div class="included-grid">
+      <div class="included-card">
+        <span class="icon-circle" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11c0-4 3-7 7-7s7 3 7 7v3H5v-3z"/><path d="M3 14h18M8 18v2M16 18v2"/></svg>
+        </span>
+        <h4>Hot meals + snacks</h4>
+        <p>Lunch and two snacks made fresh on-site each day. Weekly menu shared with parents.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon-circle" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M9 12c-3 0-5-2-5-5 0-2 2-4 4-4 1.5 0 3 1 3 3 0-2 1.5-3 3-3 2 0 4 2 4 4 0 3-2 5-5 5"/></svg>
+        </span>
+        <h4>Outside every day</h4>
+        <p>Garden, sandbox, scooters, walks. Rain boots and a change of clothes welcome.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon-circle" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+        </span>
+        <h4>Daily photo updates</h4>
+        <p>A few photos and a short note each day so you know how it's going — even before pickup.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon-circle" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20c0-4 4-7 9-7s9 3 9 7"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <h4>Certified educators</h4>
+        <p>Every educator is ECE-certified, first-aid trained, and here because they love this work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="section col">
+  <div class="s-head">
+    <div>
+      <span class="eyebrow">Common questions</span>
+      <h2>Things parents <em>often</em> ask.</h2>
+    </div>
+    <p class="s-aside">If your question isn't here, just <a href="contact.html" style="color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px;">drop us a line</a> — we love a good chat.</p>
+  </div>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>When can my child move up to the next room?</summary>
+      <p class="ans">We transition kids when they're ready — usually around their birthday, but always when we notice they're stretching out of their current room. Moves are gradual, with a few visits to the new room first so it feels familiar.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What's the typical day like?</summary>
+      <p class="ans">Predictable but never rigid. Open arrival from 7am, breakfast snack, outside time, hot lunch around 11:30, naps or quiet time, an afternoon snack and creative play, then goodbye hugs from about 5pm.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you accommodate food allergies and special diets?</summary>
+      <p class="ans">Yes. Our cook works with families to plan around allergies, sensitivities, and dietary preferences. We share menus a week in advance so you always know what's coming.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How often will I hear about my child's day?</summary>
+      <p class="ans">Every day. Short notes with photos via our parent app, plus a chat at pickup. The big stuff — a new milestone, a bumped knee, a brand-new friend — gets a more detailed message.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What should we bring on the first day?</summary>
+      <p class="ans">A change of clothes (or two), indoor shoes, a labelled water bottle, rain gear or a sun hat depending on the season, and any comfort items your child sleeps with. We provide everything else.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ─── Enrollment CTA ─── -->
+<section class="enroll" id="enroll">
+  <div class="col enroll-inner">
+    <div>
+      <span class="eyebrow">Enrollment</span>
+      <h2>Come <em>visit</em> us — we'd love to show you around.</h2>
+      <p>Tours take about 30 minutes and we'd love for your kiddo to come along. We'll walk you through each room and chat through any questions about the program that's right for them.</p>
+      <div class="enroll-ctas">
+        <a href="enrollment.html" class="btn btn-primary">Book a tour
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="enrollment.html" class="btn btn-secondary">Join the waitlist</a>
+      </div>
+    </div>
+    <div class="enroll-side">
+      <div class="enroll-stat">
+        <div class="big">Fall<br/>2026</div>
+        <div class="lbl">Next enrollment window</div>
+      </div>
+      <div class="enroll-stat">
+        <div class="big">3</div>
+        <div class="lbl">Spots open across toddler &amp; preschool</div>
+      </div>
+      <div class="enroll-stat">
+        <div class="big">30<span style="font-size:.5em;"> min</span></div>
+        <div class="lbl">Tour length — bring the kids</div>
+      </div>
+      <div class="enroll-stat">
+        <div class="big">$<span style="font-size:.7em;">—</span></div>
+        <div class="lbl">Monthly tuition — rates shared on tour</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer" id="contact">
+  <div class="col">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" width="36" height="36">
+              <g stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round" fill="none">
+                <line x1="18" y1="2.5" x2="18" y2="6.5" />
+                <line x1="18" y1="29.5" x2="18" y2="33.5" />
+                <line x1="2.5" y1="18" x2="6.5" y2="18" />
+                <line x1="29.5" y1="18" x2="33.5" y2="18" />
+                <line x1="7" y1="7" x2="9.8" y2="9.8" />
+                <line x1="26.2" y1="26.2" x2="29" y2="29" />
+                <line x1="29" y1="7" x2="26.2" y2="9.8" />
+                <line x1="9.8" y1="26.2" x2="7" y2="29" />
+              </g>
+              <circle cx="18" cy="18" r="8.5" fill="var(--accent)" />
+            </svg>
+          </span>
+          <span class="brand-name">Sunnyside</span>
+        </a>
+        <p class="tagline">Warm, play-based care in the heart of Langley.</p>
+      </div>
+
+      <div>
+        <h4>Visit</h4>
+        <p data-cms-html="address">123 Sunshine Lane<br/>Langley, BC V3A 0X0</p>
+        <p style="margin-top:14px;"><strong>Mon – Fri</strong><br/>7:00am – 6:00pm</p>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <p><a href="tel:" data-cms-tel="phone">(604) 000–0000</a></p>
+        <p><a href="mailto:" data-cms-email="email">hello@sunnyside.ca</a></p>
+        <p style="margin-top:14px;"><a href="enrollment.html">Book a tour →</a></p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="space.html">Our Space</a></li>
+          <li><a href="enrollment.html">Enrollment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bot">
+      <div>© 2026 Sunnyside Daycare · Licensed by Fraser Health</div>
+      <div>Family-run in Langley, BC</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    const menuClose = document.getElementById('menuClose');
+    const menu = document.getElementById('mobileMenu');
+
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function openMenu()  { menu.classList.add('open'); menu.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; }
+
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menu.querySelectorAll('[data-mclose]').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  })();
+</script>
+
+<script src="src/cms.js"></script>
+<script src="image-slot.js"></script>
+
+</body>
+</html>

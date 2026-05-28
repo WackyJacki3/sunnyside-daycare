@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "siteContent"
+    label: "Site Content"
+    files:
+      - label: "Contact & Business Info"
+        name: "siteInfo"
+        file: "content.json"
+        format: json
+        fields:
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+            hint: "Appears in footer, contact page, and mobile menu"
+
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+            hint: "Appears in footer and contact page"
+
+          - label: "Address"
+            name: "address"
+            widget: "text"
+            hint: "Two lines — street on line 1, city/province/postal on line 2"
+
+          - label: "Homepage Hero Description"
+            name: "hero-subtext"
+            widget: "text"
+            hint: "The paragraph below the main headline on the homepage"
+
+          - label: "Homepage Hero Photo"
+            name: "img-hero"
+            widget: "image"
+            required: false
+            hint: "The large photo in the homepage hero section. Upload a photo or leave unchanged."
+
+          - label: "Day-in-Life Photo"
+            name: "img-day"
+            widget: "image"
+            required: false
+            hint: "Photo in the 'A day at Sunnyside' section on the homepage"

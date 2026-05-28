@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sunnyside — Mobile Preview</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #2A2924; min-height: 100vh; font-family: -apple-system, system-ui, sans-serif; color: #fff; }
+  .wrap {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 48px 24px;
+    gap: 28px;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(244,162,97,0.18), transparent 60%),
+      #1F1E1A;
+  }
+  .hint {
+    text-align: center; max-width: 480px;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px; line-height: 1.5;
+  }
+  .hint strong { color: #fff; font-weight: 600; }
+  .hint code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: rgba(255,255,255,0.08);
+    padding: 2px 6px; border-radius: 6px; font-size: 13px;
+  }
+  .links {
+    display: inline-flex; gap: 10px; margin-top: 8px;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .links a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: #fff; text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .links a:hover { background: rgba(255,255,255,0.14); }
+  #frame-root { display: flex; justify-content: center; }
+  iframe.site {
+    width: 100%; height: 100%; border: 0;
+    display: block; background: #FFFBF2;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hint">
+    <strong>Mobile preview</strong> · Sunnyside Daycare homepage at iPhone width.<br/>
+    Scroll inside the device · tap <code>☰</code> to test the menu · open <a href="index.html" style="color:#F4A261;text-decoration:underline;">index.html</a> for desktop.
+  </div>
+
+  <div id="frame-root"></div>
+
+  <div class="links">
+    <a href="index.html">Open desktop view →</a>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+
+<script type="text/babel">
+  function MobilePreview() {
+    return (
+      <IOSDevice width={402} height={874}>
+        <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ height: 47, flexShrink: 0 }} aria-hidden="true" />
+          <iframe className="site" src="index.html" title="Sunnyside homepage" style={{ flex: 1 }} />
+          <div style={{ height: 34, flexShrink: 0 }} aria-hidden="true" />
+        </div>
+      </IOSDevice>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('frame-root')).render(<MobilePreview />);
+</script>
+
+</body>
+</html>

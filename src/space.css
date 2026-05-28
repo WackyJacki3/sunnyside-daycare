@@ -1,0 +1,108 @@
+/* ────────────────────────────────────────────────────────────
+   Sunnyside — Our Space page styles
+   ──────────────────────────────────────────────────────────── */
+
+/* ── Page hero ── */
+.page-hero {
+  padding-block: clamp(48px, 6vw, 96px) clamp(56px, 7vw, 100px);
+  background: var(--bg);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 18px 0 24px;
+  max-width: 18ch;
+}
+.page-hero h1 em { font-style: italic; color: var(--accent-2); font-weight: 400; }
+.page-hero p { font-size: var(--step-1); max-width: 54ch; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.page-hero-meta {
+  margin-top: 32px;
+  display: flex; align-items: center; gap: 18px;
+  font-size: 0.92rem; color: var(--muted); flex-wrap: wrap;
+}
+.page-hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+/* ── Room feature cards ── */
+.room-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+.room-feature-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.room-feature-img { position: relative; width: 100%; }
+.room-feature-img::before { content: ""; display: block; padding-top: 66%; }
+.room-feature-img image-slot { position: absolute; inset: 0; width: 100%; height: 100%; }
+.room-feature-body { padding: 22px 22px 24px; }
+.room-feature-body .room-tag {
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-2); margin-bottom: 8px;
+}
+.room-feature-body:nth-child(2) .room-tag { color: var(--ink-2); }
+.room-feature-card:nth-child(3) .room-tag { color: var(--leaf); }
+.room-feature-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 500;
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+.room-feature-body p { margin: 0; color: var(--ink-2); font-size: 0.95rem; line-height: 1.55; }
+
+/* ── Outdoor split ── */
+.outdoor-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.outdoor-img {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--bg-warm);
+  justify-self: center;
+}
+.outdoor-img::before { content: ""; display: block; padding-top: 100%; }
+.outdoor-img image-slot { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.outdoor-body { max-width: 52ch; }
+.outdoor-body h2 {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 18px 0 18px;
+  line-height: 1.05;
+}
+.outdoor-body h2 em { color: var(--accent-2); font-style: italic; font-weight: 400; }
+.outdoor-body .lede { font-size: var(--step-1); color: var(--ink-2); line-height: 1.5; margin: 0 0 28px; }
+
+.feature-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.feature-list li { display: flex; align-items: center; gap: 12px; font-size: 0.97rem; color: var(--ink-2); }
+.feature-list li::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--leaf);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .room-features { grid-template-columns: 1fr; }
+  .outdoor-split { grid-template-columns: 1fr; gap: 36px; }
+  .outdoor-img { max-width: 100%; }
+  .outdoor-img::before { padding-top: 75%; }
+}

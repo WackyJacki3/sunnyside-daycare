@@ -1,0 +1,302 @@
+/* ────────────────────────────────────────────────────────────
+   Sunnyside — Programs page styles
+   Page-specific additions. Inherits all tokens from styles.css.
+   ──────────────────────────────────────────────────────────── */
+
+/* ── Page hero ── */
+.page-hero {
+  padding-block: clamp(48px, 6vw, 96px) clamp(56px, 7vw, 100px);
+  background: var(--bg);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 18px 0 24px;
+  max-width: 16ch;
+}
+.page-hero h1 em { font-style: italic; color: var(--accent-2); font-weight: 400; }
+.page-hero p {
+  font-size: var(--step-1);
+  max-width: 54ch;
+  color: var(--ink-2);
+  margin: 0;
+  line-height: 1.5;
+}
+.page-hero-meta {
+  margin-top: 32px;
+  display: flex; align-items: center; gap: 18px;
+  font-size: 0.92rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+.page-hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+/* ── Comparison strip ── */
+.compare {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-warm);
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.compare-card {
+  padding: 32px 28px;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column;
+}
+.compare-card:last-child { border-right: 0; }
+.compare-card .age {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 8px;
+}
+.compare-card:nth-child(2) .age { color: var(--ink-2); }
+.compare-card:nth-child(3) .age { color: var(--leaf); }
+.compare-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+  line-height: 1.05;
+}
+.compare-stats {
+  display: flex; flex-direction: column;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+.compare-stat {
+  display: flex; justify-content: space-between;
+  border-top: 1px solid var(--line-soft);
+  padding: 10px 0;
+  align-items: baseline;
+}
+.compare-stat:first-child { border-top: 0; padding-top: 0; }
+.compare-stat .l { color: var(--muted); font-size: 0.88rem; }
+.compare-stat .v { font-weight: 600; color: var(--ink); }
+
+/* ── Program detail split ── */
+.prog-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.prog-split.reverse .prog-split-img { order: 2; }
+
+/*
+  The image container uses a ::before pseudo-element to establish
+  height reliably. All children (image-slot) are position:absolute,
+  so aspect-ratio alone gives zero height when align-items:center
+  is in play. The ::before block forces the correct intrinsic height.
+*/
+.prog-split-img {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--bg-warm);
+  justify-self: center;
+}
+.prog-split-img::before {
+  content: "";
+  display: block;
+  padding-top: 125%; /* 4:5 ratio */
+}
+.prog-split-img image-slot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.prog-split-body { max-width: 56ch; }
+
+.age-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+}
+.age-tag .pip {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+.prog-split-body h2 {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 18px 0 18px;
+  line-height: 1.05;
+}
+.prog-split-body h2 em { color: var(--accent-2); font-style: italic; font-weight: 400; }
+.prog-split-body .lede {
+  font-size: var(--step-1);
+  color: var(--ink-2);
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.prog-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.prog-detail h4 {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 14px;
+}
+.prog-detail p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.prog-detail ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.prog-detail li {
+  display: flex; gap: 10px;
+  font-size: 0.97rem;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.prog-detail li::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Included with every program ── */
+.included {
+  background: var(--bg-warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+}
+.included-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px 22px 24px;
+}
+.included-card .icon-circle {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--bg-warm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.included-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+.included-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── FAQ ── */
+.faq-list {
+  display: flex; flex-direction: column;
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 26px 0;
+  display: flex; align-items: flex-start; gap: 24px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-family: var(--font-body);
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-left: auto;
+  color: var(--ink-2);
+  transition: transform .25s ease;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .ans {
+  padding: 0 0 28px;
+  font-size: 1rem;
+  color: var(--ink-2);
+  max-width: 60ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-card { border-right: 0; border-bottom: 1px solid var(--line); padding: 26px 24px; }
+  .compare-card:last-child { border-bottom: 0; }
+
+  .prog-split { grid-template-columns: 1fr; gap: 36px; }
+  .prog-split.reverse .prog-split-img { order: 0; }
+  .prog-split-img { max-width: 100%; }
+  .prog-split-img::before { padding-top: 75%; } /* 4:3 on tablet/mobile */
+
+  .included-grid { grid-template-columns: repeat(2, 1fr); }
+  .prog-detail-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 560px) {
+  .included-grid { grid-template-columns: 1fr; }
+  .faq-item summary { font-size: 1.15rem; padding: 22px 0; gap: 16px; }
+  .faq-item summary::after { font-size: 1.5rem; }
+  .compare-card h3 { font-size: 1.5rem; }
+}
